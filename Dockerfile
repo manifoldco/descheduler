@@ -11,10 +11,11 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-
-FROM fedora
+FROM scratch
 
 MAINTAINER Avesh Agarwal <avagarwa@redhat.com>
 
 COPY _output/bin/descheduler /bin/descheduler
-CMD ["/bin/descheduler --help"]
+
+ENTRYPOINT ["/bin/descheduler"]
+CMD ["--help"]
